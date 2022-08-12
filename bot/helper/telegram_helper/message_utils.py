@@ -87,7 +87,7 @@ def sendLogFile(bot, message: Message):
                           chat_id=message.chat_id)
 
 def sendFile(bot, message: Message, name: str, caption=""):
-    print(name)
+    LOGGER.warning(name)
     try:
         with open(name, 'rb') as f:
             bot.sendDocument(document=f, filename=f.name, reply_to_message_id=message.message_id,
